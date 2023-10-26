@@ -1,0 +1,82 @@
+@import "./colors.scss";
+@import './font.scss';
+
+@mixin flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  background-color: $navbar_color;
+  ul{
+    @include flexContainer;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px 0;
+    gap: 10px;
+    font-family:   $font_two;;
+    a{
+      text-decoration: none;
+      color: map-get($colors , 'light' )
+    }
+   
+  }
+
+  
+  
+}
+
+.sass_check1{
+  @include flexContainer;
+  height: 100vh;
+  width: 100vw;
+  background-color: $first-fav-color;
+  padding: 0 20px;
+  
+
+  h1{
+    color: $second-fav-color;
+    font-size: 2rem;
+    font-family: $font_one;
+  }
+  h3{
+    color: map-get($colors , "light" );
+    font-family: $font_one;
+  }
+  p{
+    color: $third-fav-color;
+    font-family: $font_two;
+  }
+
+}
+
+.sass_check2{
+  @extend .sass_check1;
+  background-color: #ffe873;
+  
+  p{
+    color: $second-fav-color;
+    font-family: $font_two;
+  }
+}
+
+.sass_check3{
+  @extend .sass_check1;
+   background-color: #83866b;
+}
+
+
+.sass_check4{
+  @extend .sass_check1;
+background-color: #233d40;
+height: 10vh;
+ 
+}
